@@ -1,0 +1,21 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "always"
+    },
+    "stylelint.enable": true,
+    "stylelint.validate": [
+        "css",
+        "postcss",
+        "scss",
+        "html",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "stylelint.config": null,
+    "stylelint.configBasedir": "./",
+    // "css.lint.unknownAtRules": "ignore"
+    // the above line works too, instead of the line below to remove the yellowlines under tailwind syntax keywords coming from vscode's built-in css validator. This is because it would make the built-in one ignore all unknown at-rules but stylelint being active here would cause the truly unknown/invalid ones to still get caught by stylelint. Just `"css.validate": false` would work too as, again, stylelint is active here and is superior to the built-in validator. It would catch any truly unknown/invalid @ rules.
+    "css.customData": [".vscode/css_custom_data.json"]
+}
