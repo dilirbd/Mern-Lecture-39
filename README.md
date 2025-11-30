@@ -1,3 +1,7 @@
+# MOST IMPORTANT!!!!
+
+Everything below is boilerplate. It's not the actual description.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
