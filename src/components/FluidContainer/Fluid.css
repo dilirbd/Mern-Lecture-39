@@ -1,0 +1,194 @@
+
+@layer utilities {
+    .fluid-width {
+        width: clamp(
+            var(--fluid-f-width-min, 100px),
+            var(--fluid-f-width-ideal, 35vw),
+            var(--fluid-f-width-max, 200px)
+        );
+    }
+
+    .fluid-height {
+        height: clamp(
+            var(--fluid-f-height-min, 60px),
+            var(--fluid-f-height-ideal, 20vw),
+            var(--fluid-f-height-max, 100px)
+        );
+    }
+
+    .fluid-fs {
+        font-size: clamp(
+            var(--fluid-f-font-size-min, 1rem),
+            var(--fluid-f-font-size-ideal, 2.5vw),
+            var(--fluid-f-font-size-max, 2rem)
+        )
+    }
+
+    .fluid-lh {
+        line-height: clamp(
+            var(--fluid-line-height-min, 1.2),
+            var(--fluid-line-height-ideal, calc(1em + 1vw)),
+            var(--fluid-line-height-max, 2)
+        );
+    }
+
+    .fluid-pt {
+        padding-top: clamp(
+            var(--fluid-padding-top-min, 0.4rem),
+            var(--fluid-padding-top-ideal, 1vw),
+            var(--fluid-padding-top-max, 0.8rem)
+        );
+    }
+
+    .fluid-pr {
+        padding-right: clamp(
+            var(--fluid-padding-right-min, 0.5rem),
+            var(--fluid-padding-right-ideal, 1.2vw),
+            var(--fluid-padding-right-max, 1rem)
+        );
+    }
+
+    .fluid-pb {
+        padding-bottom: clamp(
+            var(--fluid-padding-bottom-min, 0.4rem),
+            var(--fluid-padding-bottom-ideal, 1vw),
+            var(--fluid-padding-bottom-max, 0.8rem)
+        );
+    }
+
+    .fluid-pl {
+        padding-left: clamp(
+            var(--fluid-padding-left-min, 0.5rem),
+            var(--fluid-padding-left-ideal, 1.2vw),
+            var(--fluid-padding-left-max, 1rem)
+        );
+    }
+
+    .fluid-p {
+        padding: clamp(
+            var(--fluid-f-padding-min, 0.5rem),
+            var(--fluid-f-padding-ideal, 1.5vw),
+            var(--fluid-f-padding-max, 1rem)
+        );
+    }
+
+    .fluid-mt {
+        margin-top: clamp(
+            var(--fluid-margin-top-min, 0.4rem),
+            var(--fluid-margin-top-ideal, 0.9vw),
+            var(--fluid-margin-top-max, 0.8rem)
+        );
+    }
+
+    .fluid-mr {
+        margin-right: clamp(
+            var(--fluid-margin-right-min, 0.5rem),
+            var(--fluid-margin-right-ideal, 1.2vw),
+            var(--fluid-margin-right-max, 1rem)
+        );
+    }
+
+    .fluid-mb {
+        margin-bottom: clamp(
+            var(--fluid-margin-bottom-min, 0.4rem),
+            var(--fluid-margin-bottom-ideal, 0.9vw),
+            var(--fluid-margin-bottom-max, 0.8rem)
+        );
+    }
+
+    .fluid-ml {
+        margin-left: clamp(
+            var(--fluid-margin-left-min, 0.5rem),
+            var(--fluid-margin-left-ideal, 1.2vw),
+            var(--fluid-margin-left-max, 1rem)
+        );
+    }
+
+    .fluid-m {
+        margin: clamp(
+            var(--fluid-f-margin-min, 0.5rem),
+            var(--fluid-f-margin-ideal, 1.5vw),
+            var(--fluid-f-margin-max, 1rem)
+        );
+    }
+
+    .fluid-rg {
+        row-gap: clamp(
+            var(--fluid-row-gap-min, 0.5rem),
+            var(--fluid-row-gap-ideal, 2vw),
+            var(--fluid-row-gap-max, 1.5rem)
+        );
+    }
+
+    .fluid-cg {
+        column-gap: clamp(
+            var(--fluid-column-gap-min, 0.5rem),
+            var(--fluid-column-gap-ideal, 2vw),
+            var(--fluid-column-gap-max, 1.5rem)
+        );
+    }
+
+    .fluid-gap {
+        gap: clamp(
+            var(--fluid-f-gap-min, 0.5rem),
+            var(--fluid-f-gap-ideal, 2vw),
+            var(--fluid-f-gap-max, 1.5rem)
+        );
+    }
+
+    .fluid-br {
+        border-radius: clamp(
+            var(--fluid-border-radius-min, 0.25rem),
+            var(--fluid-border-radius-ideal, 1vw),
+            var(--fluid-border-radius-max, 1rem)
+        );
+    }
+
+    .fluid-bw {
+        border-width: clamp(
+            var(--fluid-border-width-min, 1px),
+            var(--fluid-border-width-ideal, 0.5vw),
+            var(--fluid-border-width-max, 5px)
+        );
+    }
+
+    .fluid-top {
+        top: clamp(
+            var(--fluid-f-top-min, 0),
+            var(--fluid-f-top-ideal, 0),
+            var(--fluid-f-top-max, 0)
+        );
+    }
+
+    .fluid-right {
+        right: clamp(
+            var(--fluid-f-right-min, 0),
+            var(--fluid-f-right-ideal, 0),
+            var(--fluid-f-right-max, 0)
+        );
+    }
+
+    .fluid-bottom {
+        bottom: clamp(
+            var(--fluid-f-bottom-min, 0),
+            var(--fluid-f-bottom-ideal, 0),
+            var(--fluid-f-bottom-max, 0)
+        );
+    }
+
+    .fluid-left {
+        left: clamp(
+            var(--fluid-f-left-min, 0),
+            var(--fluid-f-left-ideal, 0),
+            var(--fluid-f-left-max, 0)
+        );
+    }
+
+    .fluid-inset {
+        inset: clamp(
+            var(--fluid-f-inset-min, 0),
+            var(--fluid-f-inset-ideal, 0),
+            var(--fluid-f-inset-max, 0)
+        );
+    }
+}

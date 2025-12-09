@@ -1,12 +1,95 @@
 @import "tailwindcss";
 
+@theme {
+    --color-primary: #0d1b2a;
+    --color-shade-1: #1b263b;
+    --color-shade-2: #415a77;
+    --color-shade-3: #778da9;
+    --color-text-primary: #fff;
+    --color-text-shade-1: #e0e1dd;
+    --font-site-lang: "Anek Bangla", "Poppins";
+    --site-width: min(100%, 1600px);
+    --burger-bar-height: 4px;
+    --burger-bar-width: 30px;
+    --burger-gap: 5px;
+    --burger-height: calc(
+        (var(--burger-bar-height) * 3) + (var(--burger-gap) * 2)
+    );
+
+    /* value of theta (deg) would have to be higher for bigger burger-height.
+  Use trial-and-error to find it. */
+    --burger-cross-length: calc(var(--burger-height) / sin(36.25deg));
+    --animation-time-func: 250ms ease-out;
+    --breakpoint-ls: 67rem;
+    --navbar-height: 60px;
+}
 
 :root {
-  background-color: #242424;
+    background-color: #242424bc;
+    box-sizing: border-box;
+}
+
+.burger {
+    @apply flex ls:hidden cursor-pointer flex-col gap-(--burger-gap) z-20;
+}
+
+.burger::before,
+.burger::after,
+.burger input {
+    @apply bg-text-primary rounded-[300px] content-[''] h-(--burger-bar-height) w-(--burger-bar-width) origin-left;
+
+    transition: opacity var(--animation-time-func),
+        width var(--animation-time-func), rotate var(--animation-time-func),
+        translate var(--animation-time-func);
+}
+
+.burger input {
+    @apply appearance-none m-0 outline-none p-0 pointer-events-none;
+}
+
+.burger:has(input:checked)::before {
+    @apply rotate-45 w-(--burger-cross-length) translate-x-[calc(var(--burger-cross-length)-var(--burger-bar-width))] translate-y-[calc((var(--burger-bar-height)/-2)-2px)];
+}
+
+.burger:has(input:checked)::after {
+    @apply -rotate-45 w-(--burger-cross-length) translate-x-[calc(var(--burger-cross-length)-var(--burger-bar-width))] translate-y-[calc((var(--burger-bar-height)/2)+2px)];
+}
+
+.burger input:checked {
+    @apply opacity-0 w-0;
+}
+
+.navbar-collapse-tailwind {
+    @apply items-center bg-primary rounded-bl-lg rounded-br-lg flex basis-full ls:basis-[content] flex-col ls:flex-row grow font-semibold justify-between ls:justify-end leading-normal max-h-0 ls:max-h-fit opacity-0 ls:opacity-100 overflow-hidden transform-[scaleY(0)_translateY(-50px)] ls:p-0 ls:transform-[translateY(0)_scaleY(1)] absolute ls:relative w-full ls:w-[unset] top-12/12 ls:top-[unset];
+
+    transition: opacity var(--animation-time-func),
+        transform var(--animation-time-func),
+        max-height var(--animation-time-func),
+        padding var(--animation-time-func);
+}
+
+label.burger:has(input:checked) + .navbar-collapse-tailwind {
+    @apply max-h-fit opacity-100 pt-2 pb-4 ls:p-0 transform-[translateY(0)_scaleY(1)];
+}
+
+/* nav -> ul */
+.navbar-nav-tailwind {
+    /* set minmax value based on length of longest string among the li items */
+    @apply items-center grid ls:flex grid-cols-[repeat(auto-fit,minmax(206px,1fr))] ls:grid-cols-[unset] list-none w-full ls:w-[initial];
+}
+
+/* nav -> ul -> li */
+.nav-item-tailwind {
+    @apply text-center ls:text-start pt-0;
+}
+
+/* nav -> ul -> li -> a */
+.nav-link-tailwind {
+    @apply border-0 text-text-primary font-semibold block px-4 py-1.5 ls:p-0 no-underline;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    background-color: #f8f8f8e1;
-  }
+    :root {
+        background-color: #f8f8f8e1;
+    }
 }
